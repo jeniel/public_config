@@ -15,14 +15,14 @@ spec:
   - host: app.172.16.12.43.nip.io
     http:
       paths:
-      - path: /one/?(.*)
+      - path: /one/
         pathType: Prefix
         backend:
           service:
             name: test-first
             port:
               number: 8080
-      - path: /two/?(.*)
+      - path: /two/
         pathType: Prefix
         backend:
           service:
