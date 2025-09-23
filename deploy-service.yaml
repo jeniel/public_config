@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myexample-deployment
+  namespace: bata-namespace   # pangan nako sa namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: myapp
+          image: jeniel/tryagain:1.0.9
+          ports:
+            - containerPort: 80   # port kailangan same sa targerport|service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+  namespace: bata-namespace
+spec:
+  selector:
+    app: myapp
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 8080          # port sulod sa cluster
+      targetPort: 80    # connect tp container
+      #nodePort: 30080 
