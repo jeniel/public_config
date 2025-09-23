@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: myapp.local
+    - host: app.172.16.12.43.nip.io
       http:
         paths:
           - path: /one
