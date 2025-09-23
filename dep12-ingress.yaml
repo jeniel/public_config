@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/rewrite-target: /$1
 rules:
-  - host: myapp.local
+  - host: app.172.16.12.43.nip.io
     http:
       paths:
         - path: /one
