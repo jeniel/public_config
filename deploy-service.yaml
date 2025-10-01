@@ -17,7 +17,7 @@ spec:
         - name: myapp
           image: jeniel/tryagain:1.0.9
           ports:
-            - containerPort: 8080   # port kailangan same sa targerport|service
+            - containerPort: 80  # port kailangan same sa targerport|service
 ---
 apiVersion: v1
 kind: Service
@@ -31,5 +31,5 @@ spec:
   ports:
     - protocol: TCP
       port: 8080          # port sulod sa cluster
-      targetPort: 8080    # connect tp container
+      targetPort: 80   # connect tp container
       #nodePort: 30080 
